@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Registro;
+use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -41,7 +43,21 @@ class RegistroController extends Controller
         //exit();
         $datos_guardar->save();
         return redirect()->route('registro');
-
-        
     }
-}
+
+    public function mostrar(){
+
+      // $registros = Registro::get();
+      $registros = DB::table('registros')->get();
+      return view('/mostrar', compact('registros') );
+      // print_r($registros);
+      // exit();
+    }
+
+    public function eliminar($codigo){
+      // echo $codigo;
+      Registro::destroy($codigo);
+      return view('registro');
+
+    }
+  } 

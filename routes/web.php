@@ -19,6 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/registro', 'RegistroController@index')->name('registro');
 Route::post('/registro/guardar', 'RegistroController@guardar')->name('registro.guardar');
+
+Route::get('/mostrar', 'RegistroController@mostrar')->name('mostrar');
+Route::delete('/registro/{codigo}', 'RegistroController@eliminar')->name('registros.eliminar');
+
+
