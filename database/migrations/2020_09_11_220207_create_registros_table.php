@@ -14,7 +14,7 @@ class CreateRegistrosTable extends Migration
     public function up()
     {
         Schema::create('registros', function (Blueprint $table) {
-            //$table->id();            
+            $table->id();            
             $table->string("num_codigo");
             $table->integer("gestion"); 
             $table->string("area_unidad"); 

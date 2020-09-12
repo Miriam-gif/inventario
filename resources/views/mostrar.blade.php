@@ -10,14 +10,22 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Inventario</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="{{ route('registro') }}">Registrar</a>
+        <a class="nav-item nav-link" href="{{ route('mostrar') }}">Mostrar</a>
+      </div>
+    </div>
+  </nav>
   <div class="container px-5">
-
-
     <div class="row">
       <h2>Seccion de DataTable</h2>
       <table class="table alignitems-center table-flush" id="registro-table">
         <thead class="thead-light">
           <tr>
+            <th scope="col">ID</th>
             <th scope="col">num_codigo</th>
             <th scope="col">gestion</th>
             <th scope="col">area_unidad</th>
@@ -40,12 +48,14 @@
             <th scope="col">legalizado</th>
             <th scope="col">fotocopia</th>
             <th scope="col">observacion</th>
-            <th scope="col">acciones</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($registros as $registro)
           <tr>
+            <td scope="col">{{ $registro->id }}</td>
             <td scope="col">{{ $registro->num_codigo }}</td>
             <td scope="col">{{$registro->gestion}}</td>
             <td scope="col">{{$registro->area_unidad}}</td>
@@ -69,7 +79,10 @@
             <td scope="col">{{$registro->fotocopia}}</td>
             <td scope="col">{{$registro->observacion}}</td>
             <td>
-              <form action="{{ route('registros.eliminar', $registro->num_codigo) }}" method="post">
+              <a class="btn btn-secondary" href=" {{ route('obtener', $registro->id)}} ">Editar</a>
+            </td>
+            <td>
+              <form action="{{ route('registros.eliminar', $registro->id) }}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Borrar</button>

@@ -39,10 +39,10 @@ class RegistroController extends Controller
         $datos_guardar->fotocopia = $request->input('fotocopia');
         $datos_guardar->observacion = $request->input('observacion');
 
-        //print_r($datos_guardar);
-        //exit();
         $datos_guardar->save();
         return redirect()->route('registro');
+
+        // return $request -> file("documento_pdf");
     }
 
     public function mostrar(){
@@ -54,10 +54,25 @@ class RegistroController extends Controller
       // exit();
     }
 
-    public function eliminar($codigo){
-      // echo $codigo;
-      Registro::destroy($codigo);
+    public function eliminar($id){
+      // echo $id;
+      Registro::destroy($id);
       return view('registro');
 
+    }
+
+    public function obtener($id){
+      $registro = Registro::where('id', $id)->first();
+      // echo $registro;
+      return view( 'modificar', compact('registro'));
+    }
+
+    public function editar(Request $request, $id){
+      // echo $id;
+      // Registro::where('id', $id)->update($datosReserva);
+      $datos = request()->except(['_token', '_method']);
+      Registro::where('id', $id)->update($datos);
+      return redirect('mostrar');
+        // print_r($datos);
     }
   } 

@@ -21,104 +21,102 @@
   </nav>
   <div class="container px-5">
     <h2 class="text-center">Inventario de documentos</h2>
-    <form action="{{ route( 'registro.guardar' ) }}" method="post" enctype="multipart/form-data">
-      @csrf
+    <form action="{{ route( 'editar', $registro->id ) }}" method="post">
+      <!-- @csrf -->
+      {{ csrf_field() }}
+      {{ method_field('PATCH') }}
       <div class="form-group">
         <label for="num_codigo">Numero de codigo</label>
-        <input class="form-control" type="text" name="num_codigo">
+        <input class="form-control" type="text" name="num_codigo" value="{{$registro->num_codigo}}">
       </div>
 
       <div class="form-group">
         <label for="gestion">Gestion</label>
-        <input class="form-control" type="number" name="gestion">
+        <input class="form-control" type="number" name="gestion" value="{{$registro->gestion}}">
       </div>
       <div class="form-group">
         <label for="area_unidad">Area o Unidad</label>
-        <input class="form-control" type="text" name="area_unidad">
+        <input class="form-control" type="text" name="area_unidad" value="{{$registro->area_unidad}}">
       </div>
       <div class="form-group">
         <label for="titulo_proceso">Titulo del Proceso</label>
-        <input class="form-control" type="text" name="titulo_proceso">
+        <input class="form-control" type="text" name="titulo_proceso" value="{{$registro->titulo_proceso}}">
       </div>
       <div class="form-group">
         <label for="formato">Formato</label>
-        <input class="form-control" type="text" name="formato">
+        <input class="form-control" type="text" name="formato" value="{{$registro->formato}}">
       </div>
       <div class="form-group">
         <label for="tomo">Tomo</label>
-        <input class="form-control" type="number" name="tomo">
+        <input class="form-control" type="number" name="tomo" value="{{$registro->tomo}}">
       </div>
 
       <div class="form-group">
         <label for=" total_tomo"> Total de tomo</label>
-        <input class="form-control" type="text" name=" total_tomo">
+        <input class="form-control" type="text" name=" total_tomo" value="{{$registro->total_tomo}}">
       </div>
       <div class="form-group">
         <label for=" total_fojas"> Total de Fojas</label>
-        <input class="form-control" type="text" name=" total_fojas">
+        <input class="form-control" type="text" name=" total_fojas" value="{{$registro->total_fojas}}">
       </div>
       <div class="form-group">
         <label for="num_estantes">No de estantes</label>
-        <input class="form-control" type="number" name="num_estantes">
+        <input class="form-control" type="number" name="num_estantes" value="{{$registro->num_estantes}}">
       </div>
       <div class="form-group">
         <label for="bandeja_alfabetica">Bandeja Alfabetica</label>
-        <input class="form-control" type="text" name="bandeja_alfabetica">
+        <input class="form-control" type="text" name="bandeja_alfabetica" value="{{$registro->bandeja_alfabetica}}">
       </div>
       <div class="form-group">
         <label for="prioridad_1">Prioridad 1</label>
-        <input class="form-control" type="text" name="prioridad_1">
+        <input class="form-control" type="text" name="prioridad_1" value="{{$registro->prioridad_1}}">
       </div>
 
       <div class="form-group">
         <label for="tipologia">Tipologia</label>
-        <input class="form-control" type="text" name="tipologia">
+        <input class="form-control" type="text" name="tipologia" value="{{$registro->tipologia}}">
       </div>
       <div class="form-group">
         <label for="cod_detalle">Cod de Detalle</label>
-        <input class="form-control" type="text" name="cod_detalle">
+        <input class="form-control" type="text" name="cod_detalle" value="{{$registro->cod_detalle}}">
       </div>
       <div class="form-group">
         <label for="descripcion_adjunta">Descripcion Adjunta</label>
-        <input class="form-control" type="text" name="descripcion_adjunta">
+        <input class="form-control" type="text" name="descripcion_adjunta" value="{{$registro->descripcion_adjunta}}">
       </div>
       <div class="form-group">
         <label for="hoja_ruta">Hoja de Ruta</label>
-        <input class="form-control" type="number" name="hoja_ruta">
+        <input class="form-control" type="number" name="hoja_ruta" value="{{$registro->hoja_ruta}}">
       </div>
       <div class="form-group">
         <label for="fech_inicio">Fech Inicio</label>
-        <input class="form-control" type="date" name="fech_inicio">
+        <input class="form-control" type="date" name="fech_inicio" value="{{$registro->fech_inicio}}">
       </div>
       <div class="form-group">
         <label for="fojas">Fojas</label>
-        <input class="form-control" type="number" name="fojas">
+        <input class="form-control" type="number" name="fojas" value="{{$registro->fojas}}">
       </div>
       <div class="form-group">
         <label for="original">Original</label>
-        <input class="form-control" type="text" name="original">
+        <input class="form-control" type="text" name="original" value="{{$registro->original}}">
       </div>
       <div class="form-group">
         <label for="copia">Copia</label>
-        <input class="form-control" type="text" name="copia">
+        <input class="form-control" type="text" name="copia" value="{{$registro->copia}}">
       </div>
       <div class="form-group">
         <label for="legalizado">Legalizado</label>
-        <input class="form-control" type="text" name="legalizado">
+        <input class="form-control" type="text" name="legalizado" value="{{$registro->legalizado}}">
       </div>
       <div class="form-group">
         <label for="fotocopia">Fotocopia</label>
-        <input class="form-control" type="text" name="fotocopia">
+        <input class="form-control" type="text" name="fotocopia" value="{{$registro->fotocopia}}">
       </div>
       <div class="form-group">
         <label for="observacion">Observacion</label>
-        <input class="form-control" type="text" name="observacion">
+        <input class="form-control" type="text" name="observacion" value="{{$registro->observacion}}">
       </div>
-      <!-- <div class="form-group">
-        <label for="documento_pdf">Subir PDF</label>
-        <input class="form-control" type="file" name="documento_pdf">
-      </div> -->
-      <button class="btn btn-primary" type="submit">Guardar datos</button>
+      <button class="btn btn-primary" type="submit">Editar datos</button>
     </form>
 
 

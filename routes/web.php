@@ -24,6 +24,8 @@ Route::get('/registro', 'RegistroController@index')->name('registro');
 Route::post('/registro/guardar', 'RegistroController@guardar')->name('registro.guardar');
 
 Route::get('/mostrar', 'RegistroController@mostrar')->name('mostrar');
-Route::delete('/registro/{codigo}', 'RegistroController@eliminar')->name('registros.eliminar');
+Route::delete('/registro/eliminar/{id}', 'RegistroController@eliminar')->name('registros.eliminar');
+Route::get('/registro/obtener/{id}', 'RegistroController@obtener')->name('obtener');
+Route::match(['put', 'patch'],'/registro/editar/{id}', 'RegistroController@editar')->name('editar');
 
 
