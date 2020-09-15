@@ -15,132 +15,132 @@
       <a class="navbar-brand" href="{{ route('home') }}">Inventario</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" href="{{ route('mostrar') }}">Mostrar</a>
+          <a class="nav-item nav-link" href="{{ route('mostrar') }}">Mostrar</a>
           <a class="nav-item nav-link" href="{{ route('registro') }}">Registrar</a>
         </div>
       </div>
     </div>
   </nav>
   <div class="container px-5 py-5 ">
-    <h2 class="text-center">Modificacion de documentos</h2>
-    <form action="{{ route( 'editar', $registro->id ) }}" method="post">
+    <h2 class="text-center">DOCUMENTOS REGISTRADOS</h2>
+    <form action="{{ route( 'muestra' ,$registro->id ) }}" method="get">
       <!-- @csrf -->
       {{ csrf_field() }}
       {{ method_field('PATCH') }}
     <div class='row'>
       <div class='col-md-3'>
           <div class="form-group">
-            <label for="num_codigo">N° de código</label>
-            <input class="form-control" type="text" name="num_codigo" value="{{$registro->num_codigo}}">
+            <label for="num_codigo">N° de codigo</label>
+            <input disabled class="form-control" type="text" name="num_codigo" value="{{$registro->num_codigo}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="gestion">Gestíon</label>
-            <input class="form-control" type="number" name="gestion" value="{{$registro->gestion}}">
+            <input disabled class="form-control" type="number" name="gestion" value="{{$registro->gestion}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="area_unidad">Área o Unidad</label>
-            <input class="form-control" type="text" name="area_unidad" value="{{$registro->area_unidad}}">
+            <input disabled class="form-control" type="text" name="area_unidad" value="{{$registro->area_unidad}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
-            <label for="titulo_proceso">Titulo del Proceso</label>
-            <input class="form-control" type="text" name="titulo_proceso" value="{{$registro->titulo_proceso}}">
+            <label for="titulo_proceso">Título del Proceso</label>
+            <input disabled class="form-control" type="text" name="titulo_proceso" value="{{$registro->titulo_proceso}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="formato">Formato</label>
-            <input class="form-control" type="text" name="formato" value="{{$registro->formato}}">
+            <input disabled class="form-control" type="text" name="formato" value="{{$registro->formato}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="tomo">Tómo</label>
-            <input class="form-control" type="number" name="tomo" value="{{$registro->tomo}}">
+            <input disabled class="form-control" type="number" name="tomo" value="{{$registro->tomo}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for=" total_tomo"> Total de tómo</label>
-            <input class="form-control" type="text" name=" total_tomo" value="{{$registro->total_tomo}}">
+            <input disabled class="form-control" type="text" name=" total_tomo" value="{{$registro->total_tomo}}">
           </div>
       </div>
       <div class='col-md-3'>  
           <div class="form-group">
             <label for=" total_fojas"> Total de Fojas</label>
-            <input class="form-control" type="text" name=" total_fojas" value="{{$registro->total_fojas}}">
+            <input disabled class="form-control" type="text" name=" total_fojas" value="{{$registro->total_fojas}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="num_estantes">N° de Estantes</label>
-            <input class="form-control" type="number" name="num_estantes" value="{{$registro->num_estantes}}">
+            <input disabled class="form-control" type="number" name="num_estantes" value="{{$registro->num_estantes}}">
           </div>
       </div>  
       <div class='col-md-3'>
           <div class="form-group">
             <label for="bandeja_alfabetica">Bandeja Alfabética</label>
-            <input class="form-control" type="text" name="bandeja_alfabetica" value="{{$registro->bandeja_alfabetica}}">
+            <input disabled class="form-control" type="text" name="bandeja_alfabetica" value="{{$registro->bandeja_alfabetica}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="prioridad_1">Prioridad 1</label>
-            <input class="form-control" type="text" name="prioridad_1" value="{{$registro->prioridad_1}}">
+            <input disabled class="form-control" type="text" name="prioridad_1" value="{{$registro->prioridad_1}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="tipologia">Tipología</label>
-            <input class="form-control" type="text" name="tipologia" value="{{$registro->tipologia}}">
+            <input disabled class="form-control" type="text" name="tipologia" value="{{$registro->tipologia}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="cod_detalle">Cod de Detalle</label>
-            <input class="form-control" type="text" name="cod_detalle" value="{{$registro->cod_detalle}}">
+            <input disabled class="form-control" type="text" name="cod_detalle" value="{{$registro->cod_detalle}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
-            <label for="descripcion_adjunta">Descripcíon Adjunta</label>
-            <input class="form-control" type="text" name="descripcion_adjunta" value="{{$registro->descripcion_adjunta}}">
+            <label for="descripcion_adjunta">Descripción Adjunta</label>
+            <input disabled class="form-control" type="text" name="descripcion_adjunta" value="{{$registro->descripcion_adjunta}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="hoja_ruta">Hoja de Ruta</label>
-            <input class="form-control" type="number" name="hoja_ruta" value="{{$registro->hoja_ruta}}">
+            <input disabled class="form-control" type="number" name="hoja_ruta" value="{{$registro->hoja_ruta}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
-            <label for="fech_inicio">Fecha Inició</label>
-            <input class="form-control" type="date" name="fech_inicio" value="{{$registro->fech_inicio}}">
+            <label for="fech_inicio">Fecha Inicio</label>
+            <input disabled class="form-control" type="date" name="fech_inicio" value="{{$registro->fech_inicio}}">
           </div>
       </div>
       <div class='col-md-3'>
           <div class="form-group">
             <label for="fojas">Fojas</label>
-            <input class="form-control" type="text" name="fojas" value="{{$registro->fojas}}">
+            <input disabled class="form-control" type="text" name="fojas" value="{{$registro->fojas}}">
           </div>
       </div>
       <div class='col-md-3'>
           <p>Original</p>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="original" value="si" @if ( $registro->original == "si") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="original" value="si" @if ( $registro->original == "si") checked @endif>
             <label class="form-check-label" for="original">
               Si
             </label>
           </div>
           <div class="form-check">
 
-            <input class="form-check-input" type="radio" name="original" value="no" @if ( $registro->original == "no") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="original" value="no" @if ( $registro->original == "no") checked @endif>
             <label class="form-check-label" for="original">
               No
             </label>
@@ -150,14 +150,14 @@
       <div class='col-md-3'>
           <p>Copia</p>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="copia" value="si" @if ( $registro->copia == "si") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="copia" value="si" @if ( $registro->copia == "si") checked @endif>
             <label class="form-check-label" for="copia">
               Si
             </label>
           </div>
           <div class="form-check">
 
-            <input class="form-check-input" type="radio" name="copia" value="no" @if ( $registro->copia == "no") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="copia" value="no" @if ( $registro->copia == "no") checked @endif>
             <label class="form-check-label" for="copia">
               No
             </label>
@@ -166,14 +166,14 @@
       <div class='col-md-3'>
           <p>Legalizado</p>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="legalizado" value="si" @if ( $registro->legalizado == "si") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="legalizado" value="si" @if ( $registro->legalizado == "si") checked @endif>
             <label class="form-check-label" for="legalizado">
               Si
             </label>
           </div>
           <div class="form-check">
 
-            <input class="form-check-input" type="radio" name="legalizado" value="no" @if ( $registro->legalizado == "no") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="legalizado" value="no" @if ( $registro->legalizado == "no") checked @endif>
             <label class="form-check-label" for="legalizado">
               No
             </label>
@@ -183,14 +183,14 @@
       <div class='col-md-3'>
           <p>Fotocopia</p>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="fotocopia" value="si" @if ( $registro->fotocopia == "si") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="fotocopia" value="si" @if ( $registro->fotocopia == "si") checked @endif>
             <label class="form-check-label" for="fotocopia">
               Si
             </label>
           </div>
           <div class="form-check">
 
-            <input class="form-check-input" type="radio" name="fotocopia" value="no" @if ( $registro->fotocopia == "no") checked @endif>
+            <input disabled class="form-check-input" type="radio" name="fotocopia" value="no" @if ( $registro->fotocopia == "no") checked @endif>
             <label class="form-check-label" for="fotocopia">
               No
             </label>
@@ -205,8 +205,10 @@
           </div>
       </div>
   </div>
-      <button class="btn btn-primary" type="submit">Actualizar Datos</button>
-      <button class="btn btn-primary" type="submit">Salir</button>
+      
+      <!-- <button class="btn btn-primary" type="submit">Salir</button> -->
+
+      <a class="btn btn-primary" href="{{route('mostrar')}}">Atras</a>
     </form>
 
 

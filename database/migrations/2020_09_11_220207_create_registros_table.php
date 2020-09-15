@@ -25,18 +25,18 @@ class CreateRegistrosTable extends Migration
             $table->string("total_fojas"); 
             $table->integer("num_estantes"); 
             $table->string("bandeja_alfabetica"); 
-            $table->string("prioridad_1"); 
-            $table->string("tipologia");  
-            $table->string("cod_detalle"); 
-            $table->string("descripcion_adjunta"); 
-            $table->integer("hoja_ruta"); 
+            $table->string("prioridad_1")->nullable(); 
+            $table->string("tipologia")->nullable();  
+            $table->string("cod_detalle")->nullable(); 
+            $table->string("descripcion_adjunta")->nullable(); 
+            $table->integer("hoja_ruta")->nullable(); 
             $table->string("fech_inicio"); 
-            $table->integer("fojas");           
-            $table->string("original"); 
-            $table->string("copia"); 
-            $table->string("legalizado"); 
-            $table->string("fotocopia"); 
-            $table->string("observacion"); 
+            $table->string("fojas")->nullable();           
+            $table->string("original")->nullable(); 
+            $table->string("copia")->nullable(); 
+            $table->string("legalizado")->nullable(); 
+            $table->string("fotocopia")->nullable(); 
+            $table->string("observacion")->nullable(); 
             
             // $table->timestamps();
 
